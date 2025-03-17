@@ -450,7 +450,7 @@ class _ResultViewState extends State<ResultView> {
                               }).toList();
                             },
                             touchTooltipData: LineTouchTooltipData(
-                              tooltipBgColor: TColor.secondaryColor1,
+                              // tooltipBgColor: TColor.secondaryColor1,
                               tooltipRoundedRadius: 20,
                               getTooltipItems:
                                   (List<LineBarSpot> lineBarsSpot) {
@@ -559,20 +559,20 @@ class _ResultViewState extends State<ResultView> {
                                             color: TColor.gray, fontSize: 12),
                                       ),
                                     ),
-
                                     SimpleAnimationProgressBar(
-                          height: 10,
-                          width: media.width - 120,
-                          backgroundColor: TColor.primaryColor1,
-                          foregrondColor: const Color(0xffFFB2B1) ,
-                          ratio: (double.tryParse(iObj["diff_per"].toString()) ?? 0.0) / 100.0 ,
-                          direction: Axis.horizontal,
-                          curve: Curves.fastLinearToSlowEaseIn,
-                          duration: const Duration(seconds: 3),
-                          borderRadius: BorderRadius.circular(5),
-                          
-                        ),
-
+                                      height: 10,
+                                      width: media.width - 120,
+                                      backgroundColor: TColor.primaryColor1,
+                                      foregrondColor: const Color(0xffFFB2B1),
+                                      ratio: (double.tryParse(iObj["diff_per"]
+                                                  .toString()) ??
+                                              0.0) /
+                                          100.0,
+                                      direction: Axis.horizontal,
+                                      curve: Curves.fastLinearToSlowEaseIn,
+                                      duration: const Duration(seconds: 3),
+                                      borderRadius: BorderRadius.circular(5),
+                                    ),
                                     SizedBox(
                                       width: 25,
                                       child: Text(
@@ -588,7 +588,6 @@ class _ResultViewState extends State<ResultView> {
                                 )
                               ]);
                         }),
-                 
                     RoundButton(
                         title: "Back to Home",
                         onPressed: () {
@@ -609,8 +608,8 @@ class _ResultViewState extends State<ResultView> {
   LineTouchData get lineTouchData1 => LineTouchData(
         handleBuiltInTouches: true,
         touchTooltipData: LineTouchTooltipData(
-          tooltipBgColor: Colors.blueGrey.withOpacity(0.8),
-        ),
+            // tooltipBgColor: Colors.blueGrey.withOpacity(0.8),
+            ),
       );
 
   List<LineChartBarData> get lineBarsData1 => [
@@ -740,7 +739,8 @@ class _ResultViewState extends State<ResultView> {
     }
 
     return SideTitleWidget(
-      axisSide: meta.axisSide,
+      meta: meta,
+      // axisSide: meta.axisSide,
       space: 10,
       child: text,
     );

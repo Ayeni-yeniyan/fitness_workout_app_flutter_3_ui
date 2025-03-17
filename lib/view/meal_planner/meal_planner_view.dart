@@ -211,7 +211,7 @@ class _MealPlannerViewState extends State<MealPlannerView> {
                               }).toList();
                             },
                             touchTooltipData: LineTouchTooltipData(
-                              tooltipBgColor: TColor.secondaryColor1,
+                              // tooltipBgColor: TColor.secondaryColor1,
                               tooltipRoundedRadius: 20,
                               getTooltipItems:
                                   (List<LineBarSpot> lineBarsSpot) {
@@ -290,7 +290,7 @@ class _MealPlannerViewState extends State<MealPlannerView> {
                             fontSize: 12,
                             fontWeight: FontWeight.w400,
                             onPressed: () {
-                               Navigator.push(
+                              Navigator.push(
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) =>
@@ -390,8 +390,12 @@ class _MealPlannerViewState extends State<MealPlannerView> {
                   itemBuilder: (context, index) {
                     var fObj = findEatArr[index] as Map? ?? {};
                     return InkWell(
-                      onTap: (){
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => MealFoodDetailsView(eObj: fObj) ) );
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    MealFoodDetailsView(eObj: fObj)));
                       },
                       child: FindEatCell(
                         fObj: fObj,
@@ -523,7 +527,8 @@ class _MealPlannerViewState extends State<MealPlannerView> {
     }
 
     return SideTitleWidget(
-      axisSide: meta.axisSide,
+      meta: meta,
+      // axisSide: meta.axisSide,
       space: 10,
       child: text,
     );

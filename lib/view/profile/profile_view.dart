@@ -254,7 +254,7 @@ class _ProfileViewState extends State<ProfileView> {
                             CustomAnimatedToggleSwitch<bool>(
                               current: positive,
                               values: [false, true],
-                              dif: 0.0,
+                              // dif: 0.0,
                               indicatorSize: Size.square(30.0),
                               animationDuration:
                                   const Duration(milliseconds: 200),
@@ -263,8 +263,9 @@ class _ProfileViewState extends State<ProfileView> {
                               iconBuilder: (context, local, global) {
                                 return const SizedBox();
                               },
-                              defaultCursor: SystemMouseCursors.click,
-                              onTap: () => setState(() => positive = !positive),
+                              // defaultCursor: SystemMouseCursors.click,
+                              onTap: (_) =>
+                                  setState(() => positive = !positive),
                               iconsTappable: false,
                               wrapperBuilder: (context, global, child) {
                                 return Stack(
@@ -273,11 +274,10 @@ class _ProfileViewState extends State<ProfileView> {
                                     Positioned(
                                         left: 10.0,
                                         right: 10.0,
-                                        
                                         height: 30.0,
                                         child: DecoratedBox(
                                           decoration: BoxDecoration(
-                                             gradient: LinearGradient(
+                                            gradient: LinearGradient(
                                                 colors: TColor.secondaryG),
                                             borderRadius:
                                                 const BorderRadius.all(

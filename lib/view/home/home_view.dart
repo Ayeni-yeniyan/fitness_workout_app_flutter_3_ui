@@ -395,7 +395,7 @@ class _HomeViewState extends State<HomeView> {
                                 }).toList();
                               },
                               touchTooltipData: LineTouchTooltipData(
-                                tooltipBgColor: TColor.secondaryColor1,
+                                // tooltipBgColor: TColor.secondaryColor1,
                                 tooltipRoundedRadius: 20,
                                 getTooltipItems:
                                     (List<LineBarSpot> lineBarsSpot) {
@@ -848,7 +848,7 @@ class _HomeViewState extends State<HomeView> {
                             }).toList();
                           },
                           touchTooltipData: LineTouchTooltipData(
-                            tooltipBgColor: TColor.secondaryColor1,
+                            // tooltipBgColor: TColor.secondaryColor1,
                             tooltipRoundedRadius: 20,
                             getTooltipItems: (List<LineBarSpot> lineBarsSpot) {
                               return lineBarsSpot.map((lineBarSpot) {
@@ -992,8 +992,8 @@ class _HomeViewState extends State<HomeView> {
   LineTouchData get lineTouchData1 => LineTouchData(
         handleBuiltInTouches: true,
         touchTooltipData: LineTouchTooltipData(
-          tooltipBgColor: Colors.blueGrey.withOpacity(0.8),
-        ),
+            // tooltipBgColor: Colors.blueGrey.withOpacity(0.8),
+            ),
       );
 
   List<LineChartBarData> get lineBarsData1 => [
@@ -1126,7 +1126,8 @@ class _HomeViewState extends State<HomeView> {
     }
 
     return SideTitleWidget(
-      axisSide: meta.axisSide,
+      meta: meta,
+      // axisSide: meta.axisSide,
       space: 10,
       child: text,
     );
